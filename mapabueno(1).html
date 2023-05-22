@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapa con API de Google Maps</title>
+  <style>
+    /* Establecer un tamaño para el mapa */
+    #map {
+      height: 400px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Library Map</h1>
+
+  <!-- Aquí se mostrará el mapa -->
+  <div id="map"></div>
+
+  <script>
+    // Inicializar el mapa
+    function initMap() {
+      // Coordenadas para centrar el mapa
+      var myLatLng = {lat: 41.413803, lng: 2.221624};
+
+      // Crear un nuevo mapa
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15, // Nivel de zoom
+        center: myLatLng // Coordenadas para centrar el mapa
+	});
+
+      // Agregar un marcador al mapa
+      var marker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: 'Mi ubicación'
+      });
+    }
+  </script>
+
+  <!-- Incluir la API de Google Maps -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXm9CVU8c5qBBTQnxpHzKtJ3pgeEtFiwM&callback=initMap" async defer></script>
+</body>
+</html>
